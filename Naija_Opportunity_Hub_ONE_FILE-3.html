@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Naija Opportunity Hub — discover scholarships, free courses, internships, skills and youth opportunities.">
+<title>Naija Opportunity Hub 🇳🇬</title>
+
+<style>
+:root{
+  --green:#08723e;--green2:#0b8a4d;--dark:#10261b;--muted:#607068;
+  --bg:#f6faf7;--white:#fff;--line:#dfe9e3;--soft:#eaf6ef;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:var(--bg);line-height:1.55}
+a{text-decoration:none}
+.topbar{
+  position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);
+  padding:12px 6%;display:flex;align-items:center;justify-content:space-between
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--dark);font-weight:800;font-size:1.02rem}
+.logo{
+  width:42px;height:42px;border-radius:12px;background:var(--green);color:white;
+  display:grid;place-items:center;font-size:23px;font-weight:900;box-shadow:0 6px 16px #08723e2b
+}
+.navlinks{display:flex;gap:22px}
+.navlinks a{color:#40534a;font-weight:700;font-size:.94rem}
+.menu{display:none;border:0;background:var(--soft);font-size:22px;padding:7px 10px;border-radius:9px}
+.hero{
+  padding:72px 6% 65px;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;
+  align-items:center;background:linear-gradient(135deg,#edf8f1,#fff)
+}
+.eyebrow{font-size:.73rem;font-weight:900;letter-spacing:1.5px;color:var(--green)}
+h1{font-size:clamp(2.7rem,7vw,5.5rem);line-height:.99;letter-spacing:-2.5px;margin:13px 0 22px}
+h1 span{color:var(--green)}
+.hero p.lead{font-size:1.16rem;color:var(--muted);max-width:670px}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}
+.btn{display:inline-block;padding:13px 18px;border-radius:11px;font-weight:800}
+.primary{background:var(--green);color:white}
+.secondary{background:white;color:var(--green);border:1px solid #cbdad1}
+.smallnote{font-size:.86rem;color:#65766d}
+.hero-card{background:var(--green);color:#fff;border-radius:26px;padding:35px;box-shadow:0 24px 60px #08723e29}
+.bigflag{font-size:4rem}
+.hero-card h2{font-size:1.55rem;line-height:1.15;margin:16px 0 10px}
+.hero-card p{color:#d9eee2}
+.section{padding:68px 6%}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;margin:7px 0 15px}
+.search{
+  width:min(390px,100%);padding:14px 15px;border:1px solid #cbd9d1;border-radius:12px;
+  font-size:1rem;outline:none;background:#fff
+}
+.search:focus{border-color:var(--green);box-shadow:0 0 0 3px #08723e17}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:27px}
+.filter{border:1px solid #cbd9d1;background:white;color:#34473e;border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer}
+.filter.active{background:var(--green);border-color:var(--green);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:white;border:1px solid var(--line);border-radius:17px;padding:21px;min-height:270px;display:flex;flex-direction:column;box-shadow:0 8px 25px #183b2a0b}
+.tag{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-weight:900}
+.card h3{font-size:1.2rem;line-height:1.25;margin:8px 0}
+.card p{color:var(--muted);margin:7px 0}
+.badge{display:inline-block;background:var(--soft);color:var(--green);font-size:.7rem;font-weight:900;padding:4px 7px;border-radius:6px;margin-top:5px}
+.card-footer{margin-top:auto;padding-top:15px}
+.card-footer a{color:var(--green);font-weight:900}
+.empty{padding:30px 0;color:var(--muted)}
+.light{background:#edf6f0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:#fff;border:1px solid var(--line);border-radius:17px;padding:24px}
+.number{font-size:2rem;font-weight:900;color:var(--green)}
+.step h3{margin:6px 0}
+.step p{color:var(--muted)}
+.about{background:var(--dark);color:#fff;margin:0 6% 65px;border-radius:25px}
+.about .eyebrow{color:#9de1b9}
+.about p{color:#d8e6dd;max-width:780px;font-size:1.05rem}
+footer{text-align:center;padding:25px;color:#687870;font-size:.84rem}
+.mobile-menu{display:none}
+@media(max-width:850px){
+ .navlinks{display:none}.menu{display:block}
+ .hero{grid-template-columns:1fr;padding-top:55px}
+ .grid,.steps{grid-template-columns:1fr}
+ .heading{align-items:stretch;flex-direction:column}
+ .about{margin-left:4%;margin-right:4%}
+}
+</style>
+</head>
+
+<body>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="logo">N</span><span>Naija Opportunity Hub</span></a>
+  <nav class="navlinks">
+    <a href="#opportunities">Opportunities</a>
+    <a href="#how">How it works</a>
+    <a href="#about">About</a>
+  </nav>
+  <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">🇳🇬 BUILT FOR NIGERIANS</div>
+    <h1>Find opportunities.<br><span>Build your future.</span></h1>
+    <p class="lead">Scholarships, free learning, internships, skills programmes and youth opportunities — gathered in one simple hub.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#opportunities">Explore opportunities</a>
+      <a class="btn secondary" href="#how">How it works</a>
+    </div>
+    <div class="smallnote">🔎 Always confirm eligibility, deadline and application details on the official source.</div>
+  </div>
+  <div class="hero-card">
+    <div class="bigflag">🇳🇬</div>
+    <h2>Opportunity should be easier to find.</h2>
+    <p>Less searching. More learning. More chances to grow.</p>
+  </div>
+</section>
+
+<section id="opportunities" class="section">
+  <div class="heading">
+    <div>
+      <div class="eyebrow">DISCOVER</div>
+      <h2>Opportunities for you</h2>
+    </div>
+    <input id="search" class="search" type="search" placeholder="Search opportunities..." aria-label="Search opportunities">
+  </div>
+  <div id="filters" class="filters"></div>
+  <div id="cards" class="grid"></div>
+  <p id="empty" class="empty" hidden>No matching opportunities found.</p>
+</section>
+
+<section id="how" class="section light">
+  <div class="eyebrow">HOW IT WORKS</div>
+  <h2>Three simple steps</h2>
+  <div class="steps">
+    <div class="step"><div class="number">01</div><h3>Discover</h3><p>Browse useful opportunities by category.</p></div>
+    <div class="step"><div class="number">02</div><h3>Verify</h3><p>Check the official organisation's page before applying.</p></div>
+    <div class="step"><div class="number">03</div><h3>Apply</h3><p>Use the official application page and protect your personal information.</p></div>
+  </div>
+</section>
+
+<section id="about" class="section about">
+  <div class="eyebrow">OUR MISSION</div>
+  <h2>Helping Nigerian talent find the next opportunity.</h2>
+  <p>Naija Opportunity Hub is an independent project designed to make useful opportunities easier to discover. We will keep improving it based on what users need.</p>
+</section>
+
+<footer>© 2026 Naija Opportunity Hub · Verify every listing before applying.</footer>
+
+<script>
+const opportunities=[
+ {title:"Nigerian Youth Academy (NiYA)",type:"Free Course",desc:"Free online learning covering digital skills, technology, business, entrepreneurship, creative industries and leadership.",deadline:"Check official site",source:"Federal Ministry of Youth Development",url:"https://niya.gov.ng/"},
+ {title:"Digital Training Academy (DTA)",type:"Free Course",desc:"Digital and professional skills training for Nigerians.",deadline:"Check official site",source:"Federal Government of Nigeria",url:"https://dta.education.gov.ng/"},
+ {title:"PTDF In-Country Scholarship Scheme",type:"Scholarship",desc:"Scholarship opportunities for eligible Nigerians studying at participating Nigerian public universities.",deadline:"Check official portal",source:"Petroleum Technology Development Fund",url:"https://scholarship.ptdf.gov.ng/guidelines"},
+ {title:"Federal Scholarship Board",type:"Scholarship",desc:"Official information about national scholarship awards and related programmes.",deadline:"Varies by programme",source:"Federal Ministry of Education",url:"https://education.gov.ng/federal-scholarships-board/"},
+ {title:"FME TVET Initiative",type:"Skills",desc:"Technical and vocational training opportunities with support for selected participants.",deadline:"Check official site",source:"Federal Ministry of Education",url:"https://www.tvet.education.gov.ng/"},
+ {title:"Inspire e-Learning",type:"Free Course",desc:"Free learning resources for students in multiple formats.",deadline:"Open",source:"Federal Ministry of Education",url:"https://inspire.education.gov.ng/faqs"},
+ {title:"NiYA Jobs",type:"Jobs",desc:"Youth employment opportunity information listed by the Federal Ministry of Youth Development.",deadline:"Check official page",source:"Federal Ministry of Youth Development",url:"https://yid.fmyd.gov.ng/category/opportunity/"},
+ {title:"NiYA Gigs",type:"Freelance",desc:"Freelance opportunity information listed by the Federal Ministry of Youth Development.",deadline:"Check official page",source:"Federal Ministry of Youth Development",url:"https://yid.fmyd.gov.ng/category/opportunity/"},
+ {title:"NiYA Startup Pitch 2.0",type:"Entrepreneurship",desc:"Startup opportunity listed by the Federal Ministry of Youth Development.",deadline:"Check official page",source:"Federal Ministry of Youth Development",url:"https://yid.fmyd.gov.ng/category/opportunity/"}
+];
+
+const cards=document.getElementById("cards");
+const filters=document.getElementById("filters");
+const search=document.getElementById("search");
+const empty=document.getElementById("empty");
+let selected="All";
+
+function esc(s){return String(s).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[x]));}
+
+const cats=["All",...new Set(opportunities.map(x=>x.type))];
+cats.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="filter"+(c==="All"?" active":"");
+  b.textContent=c;
+  b.onclick=()=>{
+    selected=c;
+    document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    render();
+  };
+  filters.appendChild(b);
+});
+
+function render(){
+  const q=search.value.trim().toLowerCase();
+  const list=opportunities.filter(x=>{
+    const category=selected==="All"||x.type===selected;
+    const text=(x.title+" "+x.type+" "+x.desc+" "+x.source).toLowerCase();
+    return category && text.includes(q);
+  });
+  cards.innerHTML=list.map(x=>`
+    <article class="card">
+      <div class="tag">${esc(x.type)}</div>
+      <h3>${esc(x.title)}</h3>
+      <p>${esc(x.desc)}</p>
+      <p><b>Deadline:</b> ${esc(x.deadline)}</p>
+      <span class="badge">✓ Official source</span>
+      <div class="card-footer"><a href="${x.url}" target="_blank" rel="noopener">Visit official source →</a></div>
+    </article>
+  `).join("");
+  empty.hidden=list.length>0;
+}
+search.addEventListener("input",render);
+function toggleMenu(){
+  const n=document.querySelector(".navlinks");
+  const open=n.style.display==="flex";
+  n.style.display=open?"none":"flex";
+  if(!open){n.style.position="absolute";n.style.top="67px";n.style.right="6%";n.style.background="#fff";n.style.padding="14px";n.style.borderRadius="12px";n.style.flexDirection="column";n.style.gap="12px";n.style.boxShadow="0 10px 30px #0002";}
+}
+render();
+</script>
+</body>
+</html>
